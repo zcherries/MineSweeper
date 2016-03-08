@@ -9,7 +9,7 @@ gameboard.
 
 Alt + Clicking on a square will reveal if there is a mine there or not. If there is a mine, game over, you lose, 
 reset and try again. If there is not a mine there, hooray!, it will reveal a number from 0-8 indicating how many
-mines are in the direct vincinity of that location. You should use this information to your advantage in order to
+mines are in the direct vicinity of that location. You should use this information to your advantage in order to
 try and discern which nearby square has a mine in it. If the result is 0 that means there are no mines located in 
 any location nearby, which is great news!
 
@@ -82,6 +82,9 @@ var solver = function(){
   var play = true;
 
   while(play !== 'M') {
+    if (checkSquareValue(row +1, col) === 1) {
+
+    }
     play = simulateSquareClick(row, col, true);
     col++;
     if (col === boardSize) {
@@ -90,7 +93,7 @@ var solver = function(){
     }
   }
   simulateWinCheck();
-}
+};
 
 
 
